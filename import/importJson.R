@@ -1,12 +1,10 @@
-install.packages("rjson")
+library(jsonlite)
+all.equal(mtcars, fromJSON(toJSON(mtcars)))
 
-library("rjson")
+# Faz a leitura do arquivo .json e adiona o retorno na variavel de retorno.
+retorno <- fromJSON('import/unidades_federativas.json', simplifyVector = TRUE)
 
-result <- fromJSON(file = "unidades_federativas.json")
-
-result
-
-
+print(retorno)
 
 
 
